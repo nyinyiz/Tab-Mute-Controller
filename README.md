@@ -76,7 +76,7 @@ You have 20+ tabs open. Suddenly audio starts blasting from somewhere. You spend
 | `storage` | Save your auto-mute domain rules |
 | `scripting` + `host_permissions` | Inject play/pause controls into tab pages |
 
-No data is collected or transmitted. Everything stays in your browser.
+No data is collected or transmitted. Everything stays in your browser. See the full [Privacy Policy](PRIVACY_POLICY.md).
 
 ---
 
