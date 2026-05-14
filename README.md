@@ -1,6 +1,10 @@
 # Tab Mute Controller 🔇
 
-> Instantly find and control tabs playing audio — mute, unmute, or pause any tab without switching to it.
+> A Chrome Extension to instantly find and control tabs playing audio — mute, unmute, or pause any tab without switching to it.
+
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat&logo=googlechrome&logoColor=white)
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-green?style=flat)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)
 
 ![Screenshot](screenshots/screenshot-1.png)
 
