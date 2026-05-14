@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab Mute Controller</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- Main Panel -->
+  <div id="mainPanel" class="panel">
+    <header class="header">
+      <div class="header-left">
+        <svg class="logo-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="20" rx="5" fill="#ef4444"/>
+          <path d="M4 7.5h2.5l3.5-3v11l-3.5-3H4V7.5Z" fill="white"/>
+          <path d="M12 7a3.5 3.5 0 0 1 0 6" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path d="M13.5 5a6 6 0 0 1 0 10" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+        </svg>
+        <span class="title">Tab Mute Controller</span>
+      </div>
+      <button id="muteAllBtn" class="btn-primary" disabled>Mute All</button>
+    </header>
+
+    <div id="tabList" class="tab-list"></div>
+
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M8 15h5l7-6v22l-7-6H8V15Z" fill="#334155"/>
+          <path d="M24 14a6 6 0 0 1 0 12" stroke="#334155" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M27 10a10 10 0 0 1 0 20" stroke="#334155" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <p class="empty-title">All quiet</p>
+      <p class="empty-sub">No tabs are playing audio right now</p>
+    </div>
+
+    <footer class="footer">
+      <button id="settingsBtn" class="btn-ghost">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 5a3 3 0 1 0 0 6A3 3 0 0 0 8 5Zm0 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+          <path d="M8 0a1 1 0 0 1 1 1v.5a5.47 5.47 0 0 1 1.45.6l.35-.35a1 1 0 1 1 1.41 1.41l-.35.35A5.47 5.47 0 0 1 12.5 5H13a1 1 0 0 1 0 2h-.5a5.47 5.47 0 0 1-.6 1.45l.35.35a1 1 0 1 1-1.41 1.41l-.35-.35A5.47 5.47 0 0 1 9 10.5V11a1 1 0 0 1-2 0v-.5A5.47 5.47 0 0 1 5.55 9.9l-.35.35a1 1 0 1 1-1.41-1.41l.35-.35A5.47 5.47 0 0 1 3.5 7H3a1 1 0 0 1 0-2h.5A5.47 5.47 0 0 1 4.1 3.55l-.35-.35a1 1 0 1 1 1.41-1.41l.35.35A5.47 5.47 0 0 1 7 1.5V1a1 1 0 0 1 1-1Z"/>
+        </svg>
+        Auto-mute rules
+      </button>
+    </footer>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settingsPanel" class="panel hidden">
+    <header class="header">
+      <div class="header-left">
+        <button id="backBtn" class="btn-ghost btn-back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back
+        </button>
+        <span class="title">Auto-mute Rules</span>
+      </div>
+    </header>
+
+    <div class="settings-body">
+      <p class="settings-desc">
+        Domains to mute automatically when a new tab is opened.<br>
+        Enter one domain per line (e.g. <code>twitter.com</code>).
+      </p>
+      <textarea
+        id="domainsInput"
+        class="domains-input"
+        placeholder="twitter.com&#10;x.com&#10;youtube.com&#10;news.yahoo.com"
+        spellcheck="false"
+      ></textarea>
+      <div class="settings-actions">
+        <span id="saveStatus" class="save-status"></span>
+        <button id="saveRulesBtn" class="btn-primary">Save Rules</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
